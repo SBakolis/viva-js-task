@@ -1,10 +1,9 @@
 import { CartItem } from "../types";
 import "./ProductListEntry.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { addItem } from "../reducers/cartReducer";
 import { useState } from "react";
-import { RootState } from "../reducers/store";
 
 interface props {
   product: CartItem;
@@ -14,7 +13,7 @@ interface props {
 function ProductListEntry({ product, isCart }: props) {
   const [amount, setAmount] = useState<number>(0);
   const dispatch = useDispatch();
-  const cart = useSelector((state: RootState) => state.cart);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(Number(event.target.value));
   };
@@ -31,7 +30,6 @@ function ProductListEntry({ product, isCart }: props) {
     const item: CartItem = { ...product, quantity: quantity };
 
     dispatch(addItem(item));
-    console.log(cart);
   };
 
   return (
