@@ -1,0 +1,23 @@
+.single-list-item {
+  @apply border-solid border-2 border-brown-accent p-3 m-2 rounded-md bg-back-plain flex flex-row justify-between divide-x-[1px] divide-brown-accent;
+
+  .list-text {
+    @apply text-xl font-semibold flex flex-row justify-between w-full pr-1;
+  }
+
+  .controls {
+    @apply flex flex-row h-8 items-center px-1;
+
+    .plus-kg {
+      @apply text-center pb-2 font-semibold text-[2rem] leading-[0.2rem] rounded bg-positive-accent text-white w-12 h-8;
+    }
+
+    .minus-kg {
+      @apply font-semibold pb-2 text-[2rem] leading-[0.2rem] rounded bg-negative-accent text-white w-12 h-8;
+    }
+
+    .quantity-input {
+      @apply block m-1 w-full placeholder-gray-400/70 placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-1 text-gray-700  focus:outline-none focus:ring focus:ring-positive-accent focus:ring-opacity-40;
+    }
+  }
+}

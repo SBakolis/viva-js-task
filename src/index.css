@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-back-main items-center align-middle min-h-screen min-w-full;
+}

@@ -1,0 +1,19 @@
+.step-wrapper {
+  @apply flex flex-col justify-center items-center p-4;
+
+  h3 {
+    @apply text-base font-semibold mb-3;
+  }
+
+  .steps {
+    @apply flex max-w-xs space-x-3;
+
+    .step {
+      @apply w-12 h-2 rounded-sm bg-back-dark;
+    }
+
+    .step-active {
+      @apply w-12 h-2 rounded-sm bg-positive-accent;
+    }
+  }
+}
