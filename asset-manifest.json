@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/viva-js-task/static/css/main.0ea378b4.css",
+    "main.js": "/viva-js-task/static/js/main.a3988d5e.js",
+    "static/js/787.c1112931.chunk.js": "/viva-js-task/static/js/787.c1112931.chunk.js",
+    "index.html": "/viva-js-task/index.html",
+    "main.0ea378b4.css.map": "/viva-js-task/static/css/main.0ea378b4.css.map",
+    "main.a3988d5e.js.map": "/viva-js-task/static/js/main.a3988d5e.js.map",
+    "787.c1112931.chunk.js.map": "/viva-js-task/static/js/787.c1112931.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0ea378b4.css",
+    "static/js/main.a3988d5e.js"
+  ]
+}
