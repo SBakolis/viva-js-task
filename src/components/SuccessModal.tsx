@@ -23,7 +23,7 @@ function SuccessModal({ isOpen, closeHandler }: props) {
           <h2 className="text-2xl font-semibold leading-tight tracking-wide">
             Payment Complete
           </h2>
-          <p className="flex-1 text-center dark:text-gray-400">
+          <p className="flex-1 text-center text-gray-600">
             Your data is handled carefully by our payment provider.
           </p>
           <button

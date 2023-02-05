@@ -1,13 +1,21 @@
 import React, { ChangeEvent, useState } from "react";
 import { validationMap } from "../helpers/constants";
+import "./CardInput.scss";
 
 interface props {
   type: keyof typeof validationMap;
   placeholder: string;
   name: string;
   valuePass: React.Dispatch<React.SetStateAction<string>>;
+  finalValidation: boolean;
 }
-function CardInput({ type, placeholder, name, valuePass }: props) {
+function CardInput({
+  type,
+  placeholder,
+  name,
+  valuePass,
+  finalValidation,
+}: props) {
   const [value, setValue] = useState("");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -52,8 +60,11 @@ function CardInput({ type, placeholder, name, valuePass }: props) {
           placeholder={placeholder}
           onChange={handleChange}
           value={value}
-          className="input-ok"
+          className={finalValidation ? "input-ok" : "input-invalid"}
         />
+        {!finalValidation ? (
+          <p className=" text-red-700">{validationMap[type].error}</p>
+        ) : null}
       </div>
     </>
   );

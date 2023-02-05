@@ -8,14 +8,28 @@ import CardInput from "./CardInput";
 import { validationMap } from "../helpers/constants";
 import SuccessModal from "./SuccessModal";
 
+//While having a separate interface for this may seem like a stretch it reduces rerenders by a lot.
+interface StyleValidation {
+  number: boolean;
+  name: boolean;
+  cvv: boolean;
+  expiry: boolean;
+}
+
 function PaymentForm() {
   const [number, setNumber] = useState<string>("");
   const [holder, setHolder] = useState<string>("");
   const [cvv, setCVV] = useState<string>("");
   const [expiry, setExpiry] = useState<string>("");
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [styleValidation, setStyleValidation] = useState<StyleValidation>({
+    number: true,
+    name: true,
+    cvv: true,
+    expiry: true,
+  });
 
-  const cardholderValid = () => {
+  const cardHolderValid = () => {
     const isValid = validationMap.name.pattern.test(holder);
     return isValid;
   };
@@ -43,16 +57,22 @@ function PaymentForm() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (
-      cardholderValid() &&
+      cardHolderValid() &&
       cardNumberValid() &&
       cardCVVValid() &&
       cardExpiryValid()
     ) {
       setModalOpen(true);
     } else {
-      // Display an error message or do nothing
+      // Displays red border around false fields and logs them.
+      setStyleValidation({
+        number: cardNumberValid(),
+        name: cardHolderValid(),
+        cvv: cardCVVValid(),
+        expiry: cardExpiryValid(),
+      });
       console.log(
-        cardholderValid(),
+        cardHolderValid(),
         cardNumberValid(),
         cardCVVValid(),
         cardExpiryValid()
@@ -68,12 +88,14 @@ function PaymentForm() {
           placeholder={"0000 0000 0000 0000"}
           name={"Card Number"}
           valuePass={setNumber}
+          finalValidation={styleValidation.number}
         />
         <CardInput
           type={"name"}
           placeholder={"Jon Doe"}
           name={"Cardholder Name"}
           valuePass={setHolder}
+          finalValidation={styleValidation.name}
         />
         <div className="flex flex-row">
           <CardInput
@@ -81,15 +103,22 @@ function PaymentForm() {
             placeholder={"01/99"}
             name={"Expiry Date"}
             valuePass={setExpiry}
+            finalValidation={styleValidation.expiry}
           />
           <CardInput
             type={"cvv"}
             placeholder={"999(9)"}
             name={"CVV/CVC"}
             valuePass={setCVV}
+            finalValidation={styleValidation.cvv}
           />
         </div>
-        <button type="submit">Pay</button>
+        <button
+          type="submit"
+          className="px-8 py-3 mt-3 w-full font-semibold rounded-md bg-positive-accent text-white"
+        >
+          Pay
+        </button>
       </form>
       <SuccessModal isOpen={modalOpen} closeHandler={setModalOpen} />
     </>

@@ -11,7 +11,7 @@ export const cardDateCheck: RegExp = /^(0[1-9]|1[0-2])\/\d{2}$/;
 export const cardNumberCheckLive: RegExp = /^\s*(\d\s*){0,16}$/;
 export const cardHolderCheckLive: RegExp = /^[a-zA-Z\s-]*$/;
 export const cardCVVCheckLive: RegExp = /^\d{0,4}$/;
-export const cardDateCheckLive: RegExp = /^(0[1-9]|1[0-2]?)\/\d{0,2}$/;
+export const cardDateCheckLive: RegExp = /^(0?[1-9]?|1[0-2]?)\/?\d{0,2}$/;
 
 //Validation
 
