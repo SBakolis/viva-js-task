@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { applyCoupon } from "../redux/slices/couponSlice";
+import { applyCoupon } from "../../redux/slices/couponSlice";
 import { useRef } from "react";
 
 function CouponForm() {

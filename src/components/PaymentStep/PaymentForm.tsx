@@ -4,7 +4,7 @@ import { ReactComponent as Master } from "../assets/mastercard.svg";
 
 import { FormEvent, useState } from "react";
 import CardInput from "./CardInput";
-import { validationMap } from "../helpers/constants";
+import { validationMap } from "../../helpers/constants";
 import SuccessModal from "./SuccessModal";
 
 //While having a separate interface for this may seem like a stretch it reduces rerenders by a lot.
@@ -70,12 +70,6 @@ function PaymentForm() {
         cvv: cardCVVValid(),
         expiry: cardExpiryValid(),
       });
-      console.log(
-        cardHolderValid(),
-        cardNumberValid(),
-        cardCVVValid(),
-        cardExpiryValid()
-      );
     }
   };
 
@@ -83,31 +77,31 @@ function PaymentForm() {
     <>
       <form onSubmit={handleSubmit}>
         <CardInput
-          type={"number"}
-          placeholder={"0000 0000 0000 0000"}
-          name={"Card Number"}
+          type="number"
+          placeholder="0000 0000 0000 0000"
+          name="Card Number"
           valuePass={setNumber}
           finalValidation={styleValidation.number}
         />
         <CardInput
-          type={"name"}
-          placeholder={"Jon Doe"}
-          name={"Cardholder Name"}
+          type="name"
+          placeholder="Jon Doe"
+          name="Cardholder Name"
           valuePass={setHolder}
           finalValidation={styleValidation.name}
         />
         <div className="flex flex-row">
           <CardInput
-            type={"expiry"}
-            placeholder={"01/99"}
-            name={"Expiry Date"}
+            type="expiry"
+            placeholder="01/99"
+            name="Expiry Date"
             valuePass={setExpiry}
             finalValidation={styleValidation.expiry}
           />
           <CardInput
-            type={"cvv"}
-            placeholder={"999(9)"}
-            name={"CVV/CVC"}
+            type="cvv"
+            placeholder="999(9)"
+            name="CVV/CVC"
             valuePass={setCVV}
             finalValidation={styleValidation.cvv}
           />

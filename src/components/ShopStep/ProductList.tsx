@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { CartItem } from "../types";
-import { getCartTotal } from "../helpers/utils";
+import { RootState } from "../../redux/store";
+import { CartItem } from "../../types";
+import { getCartTotal } from "../../helpers/utils";
 import ProductListEntry from "./ProductListEntry";
 
 interface props {

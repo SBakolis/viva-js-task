@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { CartItem } from "../types";
-import CouponsWrapper from "./CouponsWrapper";
-import PaymentForm from "./PaymentForm";
-import ProductList from "./ProductList";
+import CouponsWrapper from "./CartStep/CouponsWrapper";
+import PaymentForm from "./PaymentStep/PaymentForm";
+import ProductList from "./ShopStep/ProductList";
 import StepControls from "./StepControls";
 import StepsIndicator from "./StepIndicator";
 import "./StepsWrapper.scss";

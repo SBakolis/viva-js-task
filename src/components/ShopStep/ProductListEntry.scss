@@ -1,5 +1,5 @@
 .single-list-item {
-  @apply divide-x-[1px] border-solid border-2 border-brown-accent p-3 m-2 rounded-md bg-back-plain flex flex-row justify-between  divide-brown-accent;
+  @apply divide-x-[1px] border-solid border-2 border-brown-accent p-3 m-2 rounded-md bg-back-plain flex md:flex-row flex-col justify-between  md:divide-brown-accent;
 
   .list-text {
     @apply text-xl font-semibold flex flex-row justify-between w-full pr-1;
@@ -10,6 +10,10 @@
 
     .plus-kg {
       @apply text-[2rem] leading-[0.2rem] text-center pb-2 font-semibold  rounded bg-positive-accent text-white w-12 h-8;
+    }
+
+    .add-to-cart {
+      @apply text-[2rem] leading-[0.2rem] text-center pb-2 font-semibold  mt-2 md:mt-0 rounded bg-positive-accent text-white w-full md:w-12 h-8;
     }
 
     .minus-kg {

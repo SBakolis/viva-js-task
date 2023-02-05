@@ -1,8 +1,8 @@
-import { CartItem } from "../types";
+import { CartItem } from "../../types";
 import "./ProductListEntry.scss";
 import { useDispatch } from "react-redux";
 
-import { addItem } from "../redux/slices/cartSlice";
+import { addItem } from "../../redux/slices/cartSlice";
 import { useState } from "react";
 
 interface props {
@@ -74,7 +74,7 @@ function ProductListEntry({ product, isCart }: props) {
           <div className="controls">
             <button
               type="button"
-              className="plus-kg"
+              className="add-to-cart"
               onClick={() => handleCartAddition(product, amount)}
             >
               <svg

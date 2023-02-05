@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import { validationMap } from "../helpers/constants";
+import { validationMap } from "../../helpers/constants";
 import "./CardInput.scss";
 
 interface props {

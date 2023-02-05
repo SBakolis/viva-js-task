@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
+import { RootState } from "../../redux/store";
 import CouponForm from "./CouponForm";
-import ProductList from "./ProductList";
+import ProductList from "../ShopStep/ProductList";
 
 function CouponsWrapper() {
   const cart = useSelector((state: RootState) => state.cart);
