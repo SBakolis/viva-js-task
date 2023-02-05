@@ -1,5 +1,5 @@
 //API
-export const mockable: string = "http://demo6913236.mockable.io/";
+export const mockable: string = "https://demo6913236.mockable.io/";
 
 //RegEx
 

@@ -1,5 +1,5 @@
 .single-list-item {
-  @apply border-solid border-2 border-brown-accent p-3 m-2 rounded-md bg-back-plain flex flex-row justify-between divide-x-[1px] divide-brown-accent;
+  @apply divide-x-[1px] border-solid border-2 border-brown-accent p-3 m-2 rounded-md bg-back-plain flex flex-row justify-between  divide-brown-accent;
 
   .list-text {
     @apply text-xl font-semibold flex flex-row justify-between w-full pr-1;
@@ -9,11 +9,11 @@
     @apply flex flex-row h-8 items-center px-1;
 
     .plus-kg {
-      @apply text-center pb-2 font-semibold text-[2rem] leading-[0.2rem] rounded bg-positive-accent text-white w-12 h-8;
+      @apply text-[2rem] leading-[0.2rem] text-center pb-2 font-semibold  rounded bg-positive-accent text-white w-12 h-8;
     }
 
     .minus-kg {
-      @apply font-semibold pb-2 text-[2rem] leading-[0.2rem] rounded bg-negative-accent text-white w-12 h-8;
+      @apply text-[2rem] leading-[0.2rem] font-semibold pb-2 rounded bg-negative-accent text-white w-12 h-8;
     }
 
     .quantity-input {
