@@ -6,12 +6,14 @@ import "./PaymentForm.scss";
 import { FormEvent, useState } from "react";
 import CardInput from "./CardInput";
 import { validationMap } from "../helpers/constants";
+import SuccessModal from "./SuccessModal";
 
 function PaymentForm() {
   const [number, setNumber] = useState<string>("");
   const [holder, setHolder] = useState<string>("");
   const [cvv, setCVV] = useState<string>("");
   const [expiry, setExpiry] = useState<string>("");
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const cardholderValid = () => {
     const isValid = validationMap.name.pattern.test(holder);
@@ -46,8 +48,7 @@ function PaymentForm() {
       cardCVVValid() &&
       cardExpiryValid()
     ) {
-      // Proceed with the submission
-      console.log("Form is valid. Submitting...");
+      setModalOpen(true);
     } else {
       // Display an error message or do nothing
       console.log(
@@ -90,6 +91,7 @@ function PaymentForm() {
         </div>
         <button type="submit">Pay</button>
       </form>
+      <SuccessModal isOpen={modalOpen} closeHandler={setModalOpen} />
     </>
   );
 }
