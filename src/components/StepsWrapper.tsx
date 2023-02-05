@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CartItem } from "../types";
 import CouponsWrapper from "./CouponsWrapper";
+import PaymentForm from "./PaymentForm";
 import ProductList from "./ProductList";
 import StepControls from "./StepControls";
 import StepsIndicator from "./StepIndicator";
@@ -24,6 +25,7 @@ function StepsWrapper({ products }: props) {
         <StepsIndicator step={step} />
         {step === 0 ? <ProductList products={products} /> : null}
         {step === 1 ? <CouponsWrapper /> : null}
+        {step === 2 ? <PaymentForm /> : null}
         <StepControls
           step={step}
           handleStepIncrease={handleStepIncrease}

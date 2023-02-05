@@ -1,4 +1,4 @@
-import { Cart, CartItem } from "./types";
+import { Cart, CartItem } from "../types";
 
 export function toCartItem(item: any) {
   const cartItem: CartItem = {

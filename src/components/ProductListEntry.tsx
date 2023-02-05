@@ -2,7 +2,7 @@ import { CartItem } from "../types";
 import "./ProductListEntry.scss";
 import { useDispatch } from "react-redux";
 
-import { addItem } from "../reducers/cartReducer";
+import { addItem } from "../redux/slices/cartSlice";
 import { useState } from "react";
 
 interface props {

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../reducers/store";
+import { RootState } from "../redux/store";
 import { CartItem } from "../types";
-import { getCartTotal } from "../utils";
+import { getCartTotal } from "../helpers/utils";
 import ProductListEntry from "./ProductListEntry";
 
 interface props {
@@ -23,13 +23,15 @@ function ProductList({ products, isCart }: props) {
     <>
       <h2 className="text-3xl font-bold text-center">Available products:</h2>
       {productArray}
+      <h1 className="text-3xl font-bold text-center">Your total:</h1>
       <h1
         className={
-          // eslint-disable-next-line no-template-curly-in-string
-          'text-3xl font-bold text-center ${shouldShowSaleText? "line-through": "" }'
+          shouldShowSaleText
+            ? "text-3xl font-bold text-center line-through"
+            : "text-3xl font-bold text-center"
         }
       >
-        Your total: {priceOriginal / 100}€
+        {priceOriginal / 100}€
       </h1>
       {shouldShowSaleText ? (
         <h1 className={"text-2xl text-positive-accent font-bold text-center"}>

@@ -5,3 +5,11 @@
 body {
   @apply bg-back-main items-center align-middle min-h-screen min-w-full;
 }
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

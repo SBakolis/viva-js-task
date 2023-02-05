@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { applyCoupon } from "../reducers/couponReducer";
+import { applyCoupon } from "../redux/slices/couponSlice";
 import { useRef } from "react";
 
 function CouponForm() {
@@ -8,7 +8,7 @@ function CouponForm() {
   const inputRef = useRef<HTMLSelectElement>(null);
 
   function handleApply() {
-    console.log(inputRef.current?.value);
+    //console.log(inputRef.current?.value);
     switch (inputRef.current?.value) {
       case "HAPPYBIRTHDAY":
         dispatch(applyCoupon("HAPPYBIRTHDAY"));

@@ -4,12 +4,13 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import StepsWrapper from "./components/StepsWrapper";
 import { CartItem } from "./types";
-import { toCartItem } from "./utils";
+import { toCartItem } from "./helpers/utils";
+import { mockable } from "./helpers/constants";
 
 function App() {
   const [allProducts, setAllProducts] = useState<CartItem[]>([]);
   const { isLoading, error, data } = useQuery("products", () =>
-    axios.get("http://demo6913236.mockable.io/products").then((res) => res.data)
+    axios.get(`${mockable}products`).then((res) => res.data)
   );
 
   function mapDataToCartItem(data: any) {

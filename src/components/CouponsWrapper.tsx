@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../reducers/store";
+import { RootState } from "../redux/store";
 import CouponForm from "./CouponForm";
 import ProductList from "./ProductList";
 
