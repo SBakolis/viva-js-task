@@ -1,3 +1,7 @@
+import { ReactComponent as Amex } from "../../assets/american-express.svg";
+import { ReactComponent as Visa } from "../../assets/visa_updated_1.svg";
+import { ReactComponent as Master } from "../../assets/mastercard.svg";
+
 import React, { ChangeEvent, useState } from "react";
 import { validationMap } from "../../helpers/constants";
 import "./CardInput.scss";
@@ -48,9 +52,25 @@ function CardInput({
     }
   };
 
+  function cardLogo(value: string) {
+    switch (value[0]) {
+      case "3":
+        return <Amex className="absolute right-3 top-[50%] w-12" />;
+
+      case "4":
+        return <Visa className="absolute right-3 top-[60%] w-12" />;
+
+      case "5":
+        return <Master className="absolute right-3 top-[50%] w-12" />;
+
+      default:
+        return null;
+    }
+  }
+
   return (
     <>
-      <div className="w-full">
+      <div className="w-full relative">
         <label className="text-gray-700" htmlFor={`input-${name}`}>
           {name}
         </label>
@@ -64,6 +84,7 @@ function CardInput({
           value={value}
           className={finalValidation ? "input-ok" : "input-invalid"}
         />
+        {type === "number" ? <>{cardLogo(value)}</> : null}
         {!finalValidation ? (
           <p className=" text-red-700">{validationMap[type].error}</p>
         ) : null}

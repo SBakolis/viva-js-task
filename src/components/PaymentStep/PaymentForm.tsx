@@ -1,7 +1,3 @@
-import { ReactComponent as Amex } from "../assets/american-express.svg";
-import { ReactComponent as Visa } from "../assets/visa_updated_1.svg";
-import { ReactComponent as Master } from "../assets/mastercard.svg";
-
 import { FormEvent, useState } from "react";
 import CardInput from "./CardInput";
 import { validationMap } from "../../helpers/constants";
