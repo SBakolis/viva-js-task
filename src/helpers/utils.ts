@@ -37,5 +37,5 @@ export function getCartTotal(cart: Cart, coupon: String) {
     default:
       discountPrice = originalPrice;
   }
-  return [originalPrice, discountPrice];
+  return [originalPrice, Number(discountPrice.toFixed(2))];
 }

@@ -23,17 +23,19 @@ function CardInput({
     switch (type) {
       case "expiry":
         if (thisValue.length === 1 && Number(thisValue) > 1) {
-          thisValue = `0${thisValue}/`;
-        } else if (thisValue.length === 2) {
-          thisValue = `${thisValue}/`;
+          thisValue = `0${thisValue}`;
         }
+        let tempValueDate = thisValue.replace(/\//g, "");
+
+        tempValueDate = tempValueDate.replace(/(\d{2})(\d{1,2})/, "$1/$2");
+        thisValue = tempValueDate;
+
         break;
       case "number":
         let tempValue = thisValue.replace(/\s/g, "");
-        if (tempValue.length % 4 === 0) {
-          tempValue = tempValue.replace(/(\d{4})/g, "$1 ").trim();
-          thisValue = tempValue;
-        }
+
+        tempValue = tempValue.replace(/(\d{4})/g, "$1 ").trim();
+        thisValue = tempValue;
 
         break;
 
